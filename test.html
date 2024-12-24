@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Marvel's Spider-Man Logo">
+            <h1>Marvel's Spider-Man</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="description.html">Описание</a></li>
+                <li><a href="dictionary.html">Словарь</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="test.html" class="active">Тест</a></li>
+                <li><a href="profile.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span id="user-login"></span>
+            <button id="logout-btn" style="display: none;">Выйти</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Тест</h2>
+            <form id="test-form" novalidate>
+                <div>
+                    <p>1. Как зовут Спайдер-Мэна?</p>
+                    <input type="text" id="q1" name="q1" required>
+                </div>
+                <div>
+                    <p>2. В каком городе происходит действие игры?</p>
+                    <input type="text" id="q2" name="q2" required>
+                </div>
+         
+                <div>
+                    <p>3. Кто отец Питера Паркера?</p>
+                    <label><input type="radio" name="q3" value="Ричард Паркер" required> Ричард Паркер</label>
+                    <label><input type="radio" name="q3" value="Бен Паркер"> Бен Паркер</label>
+                </div>
+              
+                <div>
+                    <p>4. Кто использует электричество?</p>
+                    <label><input type="radio" name="q4" value="Электро" required> Электро</label>
+                    <label><input type="radio" name="q4" value="Гоблин"> Гоблин</label>
+                </div>
+                
+                <div>
+                    <p>5. Как зовут лучшего друга Питера Паркера?</p>
+                    <label><input type="radio" name="q5" value="Нед" required> Нед</label>
+                    <label><input type="radio" name="q5" value="Гарри"> Гарри</label>
+                </div>
+                
+                <div>
+                    <p>6. Кто известен как Гарри Озборн?</p>
+                    <label><input type="radio" name="q6" value="Зеленый гоблин" required> Зеленый гоблин</label>
+                    <label><input type="radio" name="q6" value="Доктор Дум"> Доктор Дум</label>
+                </div>
+                
+                <button type="submit">Проверить</button>
+            </form>
+            
+            <p id="test-result"></p>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info">
+            <p>Контактные данные:</p>
+            <p>Телефон: +1234567890</a></p>
+            <p>Социальные сети:</p>
+            <ul>
+                <li><a href="https://vk.com/meganfoxstarrussia">Facebook</a></li>
+                <li><a href="https://vk.com/meganfoxstarrussia">Twitter</a></li>
+                <li><a href="https://vk.com/meganfoxstarrussia">Instagram</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Marvel's Spider-Man Site</p>
+    </footer>
+    <script src="js/test.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

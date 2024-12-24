@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Marvel's Spider-Man Logo">
+            <h1>Marvel's Spider-Man</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="description.html">Описание</a></li>
+                <li><a href="dictionary.html">Словарь</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="test.html">Тест</a></li>
+                <li><a href="profile.html" class="active">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span id="user-login"></span>
+            <button id="logout-btn" style="display: none;">Выйти</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Личный кабинет</h2>
+            <p>Добро пожаловать, <span id="profile-login">Неизвестно</span>!</p>
+            <p>Ваш возраст: <span id="profile-age">Нет данных</span> лет</p>
+            <p>Ваш пол: <span id="profile-gender">Нет данных</span></p>
+            <p>Ваш последний результат по тесту: <span id="profile-test-result">Не выполнено</span> баллов.</p>
+            <button id="logout-btn-profile">Выход</button>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info"> <p>Контактные данные:</p>
+            <p>Телефон: +1234567890</p>
+            <p>Социальные сети:</p>
+            <ul>
+                <li><a href="https://vk.com/meganfoxstarrussia">Facebook</a></li>
+                <li><a href="https://vk.com/meganfoxstarrussia">Twitter</a></li>
+                <li><a href="https://vk.com/meganfoxstarrussia">Instagram</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Marvel's Spider-Man Site</p>
+    </footer>
+    <script src="js/profile.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const profileLogin = document.getElementById('profile-login');
+            const profileTestResult = document.getElementById('profile-test-result');
+            const profileAge = document.getElementById('profile-age');
+            const profileGender = document.getElementById('profile-gender');
+
+            const storedLogin = localStorage.getItem('userLogin');
+            const storedTestResult = localStorage.getItem('testResult');
+            const storedDob = localStorage.getItem('userDob');
+            const storedGender = localStorage.getItem('userGender');
+
+            if (storedLogin) profileLogin.textContent = storedLogin;
+            if (storedTestResult) profileTestResult.textContent = storedTestResult;
+
+            if (storedDob) {
+                const birthDate = new Date(storedDob);
+                const today = new Date();
+                const age = today.getFullYear() - birthDate.getFullYear() - (today < new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate()) ? 1 : 0);
+                profileAge.textContent = age;
+            }
+
+            if (storedGender) {
+                profileGender.textContent = storedGender === 'male' ? 'Мужской' : 'Женский';
+            }
+        });
+    </script>
+</body>
+</html>
